@@ -8,7 +8,7 @@
     tools:context="com.hsarme.shada.shadashoppinglist.LogIn">
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/etEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -18,7 +18,7 @@
         tools:layout_editor_absoluteY="52dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,25 +33,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/btnIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Sign In" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Sign Up" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnForget"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="forget my password" />
 
 </LinearLayout>

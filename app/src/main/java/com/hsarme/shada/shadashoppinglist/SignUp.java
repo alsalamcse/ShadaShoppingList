@@ -22,5 +22,6 @@ public class SignUp extends AppCompatActivity
         etPhone=(EditText)findViewById(R.id.etPhone);
         btnSave=(Button)findViewById(R.id.btnSave);
 
+
     }
 }

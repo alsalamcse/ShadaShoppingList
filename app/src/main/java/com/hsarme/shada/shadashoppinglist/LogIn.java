@@ -10,13 +10,15 @@ import android.widget.EditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LogIn extends AppCompatActivity {
+public class LogIn extends AppCompatActivity
+{
     private EditText etEmail, etPassword;
     private Button btnIn, btnUp, btnForget;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         etEmail = (EditText) findViewById(R.id.etEmail);
@@ -27,10 +29,17 @@ public class LogIn extends AppCompatActivity {
         btnIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), MainListActivity.class);
-                startActivity(i);
+                if (btnIn == view) {
+                    Intent i = new Intent(getBaseContext(), MainListActivity.class);
+                    startActivity(i);
+                }
+                if (btnUp == view) {
+                    Intent i = new Intent(getBaseContext(), SignUp.class);
+                    startActivity(i);
+                }
             }
         });
-
     }
+
 }
+

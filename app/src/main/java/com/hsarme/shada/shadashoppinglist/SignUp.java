@@ -36,6 +36,8 @@ public class SignUp extends AppCompatActivity
         btnSave=(Button)findViewById(R.id.btnSave);
         auth= FirebaseAuth.getInstance();
         firebaseUser= auth.getCurrentUser();
+
+
         btnSave.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -80,6 +82,7 @@ public class SignUp extends AppCompatActivity
                 }
             }
         });
+        FirebaseAuth.getInstance().signOut();
     }
 
 }

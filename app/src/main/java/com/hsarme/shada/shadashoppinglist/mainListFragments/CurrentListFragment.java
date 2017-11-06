@@ -40,7 +40,7 @@ public class CurrentListFragment extends Fragment {
         lstTvCurrent=(ListView)view.findViewById(R.id.lstTvCurrent);
 
         String[] ar={"Noor","Rimaa","Teya","Muhammed","Shada"};
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, )
+      //  ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, )
 
 
         return view;

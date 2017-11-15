@@ -4,9 +4,12 @@ import android.media.Image;
 import android.renderscript.Double2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.google.firebase.database.DatabaseReference;
 
 public class AddItem extends AppCompatActivity {
     private EditText etName, etUnits, etAmount,etPrice;
@@ -23,6 +26,13 @@ public class AddItem extends AppCompatActivity {
         etPrice=(EditText)findViewById(R.id.etPrice);
         iBtnImage=(ImageButton) findViewById(R.id.iBtnImage);
         btnSave=(Button) findViewById(R.id.btnSave);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataHandler();
+            }
+        });
     }
     public void dataHandler(){
         String stName=etName.getText().toString();
@@ -32,5 +42,6 @@ public class AddItem extends AppCompatActivity {
         double amount= Double.parseDouble(stAmount);
         double price=Double.parseDouble(stPrice);
 
+        DatabaseReference reference;
     }
 }

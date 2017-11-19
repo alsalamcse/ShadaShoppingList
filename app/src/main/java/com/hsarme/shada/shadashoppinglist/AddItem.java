@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddItem extends AppCompatActivity {
     private EditText etName, etUnits, etAmount,etPrice;
@@ -43,5 +44,10 @@ public class AddItem extends AppCompatActivity {
         double price=Double.parseDouble(stPrice);
 
         DatabaseReference reference;
+        //todo לקבלת קישור למסד הנתונים שלנו
+        //todo  קישור הינו לשורש של המסד הנתונים
+        reference= FirebaseDatabase.getInstance().getReference();
+        reference.child("list").setValue(stName);
+
     }
 }

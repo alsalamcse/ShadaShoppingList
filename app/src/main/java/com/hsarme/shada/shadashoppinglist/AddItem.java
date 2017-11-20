@@ -86,7 +86,8 @@ public class AddItem extends AppCompatActivity {
                             Toast.makeText(AddItem.this, "Add Product faild", Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                }
+                );
 
 
 

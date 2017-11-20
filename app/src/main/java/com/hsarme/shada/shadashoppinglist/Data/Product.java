@@ -48,4 +48,51 @@ public class Product {
     public Product(){}
 
 
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public String getKeyId() {
+        return keyId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
 }

@@ -69,8 +69,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view) {
         if (btnIn == view) {
-            Intent i = new Intent(getBaseContext(), MainListActivity.class);
-            startActivity(i);
+            dataHandler();
         }
         if (btnUp == view) {
             Intent i = new Intent(getBaseContext(), SignUp.class);

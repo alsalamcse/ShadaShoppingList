@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "409275839237",
+    "firebase_url": "https://shadashoppinglist.firebaseio.com",
+    "project_id": "shadashoppinglist",
+    "storage_bucket": "shadashoppinglist.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409275839237:android:8558b9d469517e8c",
+        "android_client_info": {
+          "package_name": "com.hsarme.shada.shadashoppinglist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409275839237-dam55gbo3pbqpdopd2qura9lg27t8h4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hsarme.shada.shadashoppinglist",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "409275839237-coion84qi7npuasprarvgutjtqlfd66v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCptoRHEStXBqMHAn8QHmMwsxCo_ZTZN4c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409275839237-coion84qi7npuasprarvgutjtqlfd66v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

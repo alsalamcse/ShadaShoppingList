@@ -3,6 +3,7 @@ package com.hsarme.shada.shadashoppinglist.mainListFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,14 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.hsarme.shada.shadashoppinglist.Data.Product;
 import com.hsarme.shada.shadashoppinglist.R;
 
 /**
@@ -42,8 +51,40 @@ public class CurrentListFragment extends Fragment {
         String[] ar={"Noor","Rimaa","Teya","Muhammed","Shada"};
       //  ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, )
 
+        readAndListen();
 
         return view;
+    }
+
+    // read and listen data from firebase
+    private  void readAndListen(){
+        //5. to get user email... user info
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        FirebaseUser user=auth.getCurrentUser();
+        String email=user.getEmail();
+        email=email.replace('.','*');
+        //6. building data reference = data path = data address
+        DatabaseReference reference;
+        //todo לקבלת קישור למסד הנתונים שלנו
+        //todo  קישור הינו לשורש של המסד הנתונים
+        reference= FirebaseDatabase.getInstance().getReference();
+        //7. listening to data change
+        reference.child(email).child("mylist")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot ds:dataSnapshot.getChildren()
+                             ) {
+                            Product p=ds.getValue(Product.class);
+                            Log.d("SL",p.toString());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
     }
 
 }

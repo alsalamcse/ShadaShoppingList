@@ -75,15 +75,16 @@ public class AddItem extends AppCompatActivity {
         reference= FirebaseDatabase.getInstance().getReference();
         //7. saving data on the firebase database
         reference.child(email).child("mylist").push().setValue(p)
+                //8. add completeListener
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful())
                         {
-                            Toast.makeText(AddItem.this, "Add Product Succeful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddItem.this, "Add Product Successful", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            Toast.makeText(AddItem.this, "Add Product faild", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddItem.this, "Add Product failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

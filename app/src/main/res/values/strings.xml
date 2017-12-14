@@ -13,4 +13,5 @@
     <string name="amount">Amount</string>
     <string name="total">Total</string>
     <string name="count">Count</string>
+    <string name="isCompleted">isCompleted</string>
 </resources>

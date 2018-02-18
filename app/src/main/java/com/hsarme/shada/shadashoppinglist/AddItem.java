@@ -72,6 +72,7 @@ public class AddItem extends AppCompatActivity {
         DatabaseReference reference;
         //todo לקבלת קישור למסד הנתונים שלנו
         //todo  קישור הינו לשורש של המסד הנתונים
+
         reference= FirebaseDatabase.getInstance().getReference();
         //7. saving data on the firebase database
         reference.child(email).child("mylist").push().setValue(p)

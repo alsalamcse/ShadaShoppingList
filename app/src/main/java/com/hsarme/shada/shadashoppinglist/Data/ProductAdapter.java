@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 
 public class ProductAdapter extends ArrayAdapter<Product>
 {
+
     /**
      *
      * @param context
@@ -25,7 +26,7 @@ public class ProductAdapter extends ArrayAdapter<Product>
     }
 
     /**
-     * todo
+     * todo מספר סידורי של הנתון (עצם) ממקור הנתונים
      * @param position the index of one data item from the data source . statrting from zero
      * @param convertView
      * todo הממשק שיכטל להציג אוסף נתונים לדוגמה LISTVIEW
@@ -35,7 +36,7 @@ public class ProductAdapter extends ArrayAdapter<Product>
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view= LayoutInflater.from(getContext()).inflate(R.layout.product_item, parent, false);
+        View view= LayoutInflater.from(getContext()).inflate(R.layout.producr_item,parent,false);
         return view;
     }
 }

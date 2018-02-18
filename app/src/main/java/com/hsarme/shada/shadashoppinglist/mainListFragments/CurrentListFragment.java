@@ -73,8 +73,7 @@ public class CurrentListFragment extends Fragment {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot ds:dataSnapshot.getChildren()
-                             ) {
+                        for (DataSnapshot ds:dataSnapshot.getChildren()) {
                             Product p=ds.getValue(Product.class);
                             Log.d("SL",p.toString());
                         }

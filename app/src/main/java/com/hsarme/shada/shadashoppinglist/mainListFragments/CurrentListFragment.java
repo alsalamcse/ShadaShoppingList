@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hsarme.shada.shadashoppinglist.Data.Product;
+import com.hsarme.shada.shadashoppinglist.Data.ProductAdapter;
 import com.hsarme.shada.shadashoppinglist.R;
 
 /**
@@ -30,6 +31,8 @@ public class CurrentListFragment extends Fragment {
     private TextView tvTotalValue, tvTotal, tvCount, tvCountValue;
     private ListView lstTvCurrent;
 
+    //8.
+    private ProductAdapter productAdapter;
 
     public CurrentListFragment() {
         // Required empty public constructor
@@ -40,6 +43,7 @@ public class CurrentListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //3.
         View view= inflater.inflate(R.layout.fragment_current_list, container, false);
         tvTotal=(TextView)view.findViewById(R.id.tvTotal);
         tvTotalValue=(TextView)view.findViewById(R.id.tvTotalValue);
@@ -50,6 +54,9 @@ public class CurrentListFragment extends Fragment {
 
         String[] ar={"Noor","Rimaa","Teya","Muhammed","Shada"};
       //  ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, )
+
+        //9.
+        productAdapter=new ProductAdapter(getContext(), R.layout.product_item);
 
         readAndListen();
 
@@ -70,9 +77,11 @@ public class CurrentListFragment extends Fragment {
         reference= FirebaseDatabase.getInstance().getReference();
         //7. listening to data change
         reference.child(email).child("mylist")
+                // todo בפעם הראשונה שמופעל המאזין מקבלים העתק לכל הניתונים תחת כתובת זו
                 .addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(DataSnapshot dataSnapshot)//todo העתק מהניתונים שהורדנו
+                    {
                         for (DataSnapshot ds:dataSnapshot.getChildren()) {
                             Product p=ds.getValue(Product.class);
                             Log.d("SL",p.toString());

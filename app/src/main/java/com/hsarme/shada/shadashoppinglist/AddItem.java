@@ -48,7 +48,7 @@ public class AddItem extends AppCompatActivity {
         String stUnits=etUnits.getText().toString();
         String stAmount=etAmount.getText().toString();
         String stPrice=etPrice.getText().toString();
-        //2. todo vlaidate feilds input
+        //2. todo validate feilds input
         //isOk=true;...
 
         //3. data manipulation

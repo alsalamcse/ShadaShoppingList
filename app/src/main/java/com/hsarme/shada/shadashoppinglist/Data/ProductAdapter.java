@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.hsarme.shada.shadashoppinglist.R;
 
 /**
  * Created by user on 14/12/2017.
@@ -35,8 +40,23 @@ public class ProductAdapter extends ArrayAdapter<Product>
      */
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view= LayoutInflater.from(getContext()).inflate(R.layout.producr_item,parent,false);
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
+    {
+        //
+        View view= LayoutInflater.from(getContext()).inflate(R.layout.product_item,parent,false);
+
+        TextView itmTvName= (TextView)view.findViewById(R.id.itmTvName);
+        TextView itmTvPrice= (TextView)view.findViewById(R.id.itmTvPrice);
+        TextView itmTvAmount= (TextView)view.findViewById(R.id.itmTvAmount);
+        ImageView itmImage= (ImageView)view.findViewById(R.id.itmImage);
+        CheckBox itmChbIsCompleted= (CheckBox)view.findViewById(R.id.itmChbIsCompleted);
+
+        Product p = getItem(position);
+        itmTvName.setText(p.getName());
+        itmTvPrice.setText(p.getPrice()+"");
+        itmTvAmount.setText(p.getAmount()+"");
+        itmChbIsCompleted.setChecked(p.isCompleted());
+
         return view;
     }
 }

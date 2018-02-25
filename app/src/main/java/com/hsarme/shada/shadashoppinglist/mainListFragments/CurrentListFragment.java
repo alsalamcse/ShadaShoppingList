@@ -55,8 +55,10 @@ public class CurrentListFragment extends Fragment {
         String[] ar={"Noor","Rimaa","Teya","Muhammed","Shada"};
       //  ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this, )
 
-        //9.
+        //9.todo בניית מתאם לרשימה
         productAdapter=new ProductAdapter(getContext(), R.layout.product_item);
+        //10. todo קביעת המתאם לרשימה
+        lstTvCurrent.setAdapter(productAdapter);
 
         readAndListen();
 
@@ -82,9 +84,13 @@ public class CurrentListFragment extends Fragment {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot)//todo העתק מהניתונים שהורדנו
                     {
+                        //11. todo מחיקת כל הניתונים מהמתאם
+                        productAdapter.clear();
                         for (DataSnapshot ds:dataSnapshot.getChildren()) {
                             Product p=ds.getValue(Product.class);
                             Log.d("SL",p.toString());
+                            //12. todo הוספת עצם למתאם
+                            productAdapter.add(p);
                         }
                     }
 
